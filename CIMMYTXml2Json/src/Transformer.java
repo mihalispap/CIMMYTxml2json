@@ -79,7 +79,10 @@ public class Transformer {
             String jsonPrettyPrintString = xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR);
             System.out.println(jsonPrettyPrintString);
             
-            
+            /*
+             * TODO:
+             * 	check existent and enrich with values already stored
+             * */
             
             /*try(FileWriter fw = new FileWriter(output_folder+System.getProperty("file.separator")+
             		init_fname.replace(".xml", ".json"), false);
