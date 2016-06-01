@@ -77,7 +77,7 @@ public class Transformer {
         	
             JSONObject xmlJSONObj = XML.toJSONObject(contents);
             String jsonPrettyPrintString = xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR);
-            System.out.println(jsonPrettyPrintString);
+            //System.out.println(jsonPrettyPrintString);
             
             /*
              * TODO:
