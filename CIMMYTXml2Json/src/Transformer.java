@@ -29,6 +29,8 @@ public class Transformer {
             System.exit(1);
         } 
         
+        //System.out.println("printout");
+        
         String output=args[1];
         File file = new File(output);
 		file.mkdirs();
@@ -40,7 +42,7 @@ public class Transformer {
 
         File[] listOfFiles = folder.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
-                return name.toLowerCase().endsWith(".xml");
+                return name.toLowerCase().endsWith(".xml") || name.toLowerCase().endsWith(".rdf");
             }
         });
         
@@ -60,7 +62,7 @@ public class Transformer {
        
         for(int i=0;i<listOfFiles.length;i++)
         {
-        	if(listOfFiles[i].getName().endsWith(".xml"))
+        	if(listOfFiles[i].getName().endsWith(".xml") || listOfFiles[i].getName().endsWith(".rdf"))
         		convert2Json(listOfFiles[i].getAbsolutePath(), output, listOfFiles[i].getName());
         }
 	}
@@ -97,7 +99,7 @@ public class Transformer {
 			*/
             
             PrintWriter writer = new PrintWriter(output_folder+System.getProperty("file.separator")+
-            		init_fname.replace(".xml", ".json"), "UTF-8");
+            		init_fname.replace(".xml", ".json").replace(".rdf", ".json"), "UTF-8");
     		writer.println(jsonPrettyPrintString);
     		writer.close();
             
